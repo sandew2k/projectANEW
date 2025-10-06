@@ -1,0 +1,64 @@
+/* ===== Dark Teal theme ===== */
+:root{
+  --bg:#57564F;           
+  --card:#7A7A73;         
+  --ink:#DDDAD0;          
+  --muted:#FDEB9E;        
+  --line:#57564F;         
+  --accent:#14b8a6;       
+  --accent-ink:#062a28;   
+  --ok:#22c55e; --err:#ef4444; --info:#60a5fa;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--ink); background:var(--bg); line-height:1.45;
+}
+
+/* ===== Layout ===== */
+.container{max-width:1120px; margin:24px auto; padding:0 16px}
+.header{display:flex; align-items:flex-end; gap:12px; margin-bottom:16px}
+.h1{font-size:28px; font-weight:800; margin:0; text-align: center; width: 100%}
+.sub{color:var(--muted); font-size:14px}
+
+.grid{display:grid; grid-template-columns: 1.2fr 1fr; gap:16px}
+@media (max-width: 900px){ .grid{grid-template-columns: 1fr} }
+
+/* ===== Cards ===== */
+.card{
+  background:var(--card); border:1px solid var(--line);
+  border-radius:12px; padding:16px;
+  box-shadow:0 1px 2px rgba(0,0,0,.2);
+}
+.card h2{margin:0 0 8px 0; font-size:18px}
+.diagram{width:100%; height:auto; border-radius:10px; border:1px solid var(--line)}
+
+/* ===== Buttons & badges ===== */
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:8px 12px; border:1px solid var(--line); border-radius:8px;
+  background:#57564F; color:var(--ink); cursor:pointer; font-weight:600;
+}
+.btn:hover{background:#111b33}
+.btn.primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+.btn.primary:hover{filter:brightness(0.95)}
+.toolbar{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px}
+
+.badge{
+  display:inline-block; padding:2px 10px; border-radius:999px; font-size:12px;
+  border:1px solid var(--line); background:#0f172a; color:var(--muted)
+}
+.badge.info{color:var(--info); border-color:#1d4ed8}
+.badge.ok{color:var(--ok); border-color:#166534}
+.badge.err{color:var(--err); border-color:#7f1d1d}
+
+/* ===== Code block ===== */
+pre{
+  background:#0a0f1a; color:#cbd5e1; padding:12px; border-radius:10px;
+  border:1px solid #0b1220; overflow:auto; margin-top:8px;
+}
+
+/* ===== Helpers ===== */
+.note{color:var(--muted); font-size:14px}

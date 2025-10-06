@@ -1,0 +1,26 @@
+{
+  "version": "0.1",
+  "pipeline": "qml-classifier",
+  "qnn": { "type": "estimator" },
+  "dataset": {
+    "type": "csv",
+    "path": "uploads/diabetes.csv",
+    "label_column": "Outcome",
+    "feature_columns": [
+      "Pregnancies",
+      "Glucose",
+      "BloodPressure",
+      "SkinThickness",
+      "Insulin",
+      "BMI",
+      "DiabetesPedigreeFunction",
+      "Age"
+    ],
+    "test_size": 0.2,
+    "seed": 42
+  },
+  "encoder": { "type": "zzfeaturemap" },
+  "circuit": { "type": "realamplitudes", "num_qubits": 8, "reps": 1 },
+  "optimizer": { "type": "cobyla", "maxiter": 60 },
+  "outputs": { "return_predictions": true, "return_generated_code": true }
+}
